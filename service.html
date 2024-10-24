@@ -4,29 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Служение</title>
-    <link rel="stylesheet" href="style.css"> <!-- Подключение стилей -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #80deea;
+            padding: 1em 0;
+            text-align: center;
+            color: white;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        /* Кнопка и стрелка */
+        .btn, #back-to-top {
+            background-color: #80deea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover, #back-to-top:hover {
+            background-color: #4bb4c6;
+        }
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 18px;
+            display: none;
+            border-radius: 50%;
+        }
+        footer {
+            margin-top: 20px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #80deea;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        footer a:hover {
+            background-color: #4bb4c6;
+        }
+    </style>
 </head>
 <body>
+
+    <header>
+        <h1>Служение</h1>
+    </header>
+
     <!-- Навигация -->
     <nav>
         <ul>
             <li><a href="about.html">Обучение и миссии</a></li>
             <li><a class="active" href="service.html">Служение</a></li>
-              <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
         </ul>
     </nav>
 
     <!-- Содержимое раздела Служение -->
     <section id="service">
-        <h1>Пастор церкви "Люди Истины"</h1>
-        <p>Здесь вы найдете информацию о различных служениях.</p>
+        <div class="container">
+            <h2>Пастор церкви "Люди Истины"</h2>
+            <p>Здесь вы найдете информацию о различных служениях, которые проводятся в нашей церкви, направленных на духовное развитие и поддержку прихожан.</p>
+        </div>
     </section>
 
-    <!-- Кнопка "На Главную" -->
+    <!-- Кнопка "На главную" -->
     <footer>
-        <a href="index.html" class="btn">На Главную</a>
-        <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="btn">↑ Вверх</button>
+        <a href="index.html">На Главную</a>
     </footer>
+
+    <!-- Кнопка "Вверх" -->
+    <div id="back-to-top" onclick="scrollToTop()">↑</div>
+
+    <script>
+        // Показ кнопки "Вверх" при прокрутке страницы
+        window.onscroll = function() {
+            var button = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        };
+
+        // Прокрутка страницы наверх
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
 </body>
 </html>
-
