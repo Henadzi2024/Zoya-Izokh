@@ -71,17 +71,44 @@
             font-weight: bold;
             cursor: pointer;
         }
+        /* Кнопка вверх */
+        #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #80deea;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            text-align: center;
+            cursor: pointer;
+            font-size: 18px;
+            display: none;
+        }
+        /* Кнопка "На главную" */
+        .back-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Обучение и миссии - Zoya Izokh</h1>
+        <h1>Обучение и миссии</h1>
     </header>
 
     <div class="container">
         <h2>Образование</h2>
-        <p>7 лет в пророческой школе пророка Дмитрия Крюковского. Три уровня пророческой школы моего пастора и пророка Самуэля Оганесянса.</p>
+        <p>7 лет в пророческой школе пророка Дмитрия Крюковского. Три уровня пророческой школы пастора и пророка Самуэля Оганесянса.</p>
         
         <h2>Миссионерская работа</h2>
         <p>Две поездки в Турцию и одна в ЮАР на базе школы Д. Крюковского.</p>
@@ -104,7 +131,15 @@
             <img class="modal-content" id="img01">
             <div id="caption"></div>
         </div>
+
+        <!-- Кнопка "На главную" -->
+        <div class="back-link">
+            <a href="index.html">На главную</a>
+        </div>
     </div>
+
+    <!-- Кнопка "Вверх" -->
+    <div id="back-to-top" onclick="scrollToTop()">↑</div>
 
     <footer>
         <p>&copy; 2024 Пастор Zoya Izokh. Все права защищены.</p>
@@ -125,6 +160,21 @@
     function closeModal() {
         var modal = document.getElementById("myModal");
         modal.style.display = "none";
+    }
+
+    // Показываем кнопку "вверх", если пользователь прокручивает страницу вниз
+    window.onscroll = function() {
+        var button = document.getElementById("back-to-top");
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+    };
+
+    // Прокрутка страницы наверх
+    function scrollToTop() {
+        window.scrollTo({top: 0, behavior: 'smooth'});
     }
     </script>
 
