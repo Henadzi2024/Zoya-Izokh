@@ -40,6 +40,11 @@
             cursor: pointer;
             object-fit: cover;
         }
+        .gallery-title {
+            text-align: center;
+            margin-top: 10px;
+            font-weight: bold;
+        }
         .modal {
             display: none;
             position: fixed;
@@ -92,6 +97,11 @@
         .back-link a:hover {
             text-decoration: underline;
         }
+        .photo-title {
+            text-align: center;
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
@@ -112,11 +122,45 @@
 
         <!-- Галерея изображений -->
         <div class="gallery">
-            <img src="images/airport.jpg" alt="Аэропорт" onclick="openModal(this)">
-            <img src="images/Zoya-Hen_обработано.png" alt="Zoya и Геннадий" onclick="openModal(this)">
-            <img src="images/Zoya-kafedra.jpg" alt="Zoya у кафедры" onclick="openModal(this)">
-            <img src="images/Zoya-shafar.jpg" alt="Zoya с шафаром" onclick="openModal(this)">
-            <img src="images/pastor-v-dele-2024-10-07.jpg" alt="Пастор в деле" onclick="openModal(this)">
+            <div>
+                <img src="images/airport.jpg" alt="Аэропорт" onclick="openModal(this)">
+                <p class="photo-title">Аэропорт</p>
+            </div>
+            <div>
+                <img src="images/Zoya-Hen_обработано.png" alt="Zoya и Геннадий" onclick="openModal(this)">
+                <p class="photo-title">Zoya и Геннадий</p>
+            </div>
+            <div>
+                <img src="images/Zoya-kafedra.jpg" alt="Zoya у кафедры" onclick="openModal(this)">
+                <p class="photo-title">Zoya у кафедры</p>
+            </div>
+            <div>
+                <img src="images/Zoya-shafar.jpg" alt="Zoya с шафаром" onclick="openModal(this)">
+                <p class="photo-title">Zoya с шафаром</p>
+            </div>
+            <div>
+                <img src="images/pastor-v-dele-2024-10-07.jpg" alt="Пастор в деле" onclick="openModal(this)">
+                <p class="photo-title">Пастор в деле</p>
+            </div>
+
+            <!-- Добавляем остальные фотографии -->
+            <div>
+                <img src="images/photo_2024-10-24_18-25-28.jpg" alt="Фотография 1" onclick="openModal(this)">
+                <p class="photo-title">Фотография 1</p>
+            </div>
+            <div>
+                <img src="images/photo_2024-10-24_18-25-51.jpg" alt="Фотография 2" onclick="openModal(this)">
+                <p class="photo-title">Фотография 2</p>
+            </div>
+            <div>
+                <img src="images/photo_2024-10-24_18-26-00.jpg" alt="Фотография 3" onclick="openModal(this)">
+                <p class="photo-title">Фотография 3</p>
+            </div>
+            <div>
+                <img src="images/photo_2024-10-24_18-26-11.jpg" alt="Фотография 4" onclick="openModal(this)">
+                <p class="photo-title">Фотография 4</p>
+            </div>
+            <!-- Добавьте остальные фотографии, если их больше -->
         </div>
 
         <!-- Модальное окно для увеличенных фотографий -->
@@ -174,3 +218,4 @@
 
 </body>
 </html>
+``
