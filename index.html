@@ -57,6 +57,51 @@
             margin: 0 auto;
             border-radius: 8px;
         }
+        .img-description {
+            margin-top: 10px;
+            font-size: 1.1em;
+            color: #555;
+        }
+        .additional-images {
+            margin-top: 30px;
+        }
+        .additional-images img {
+            width: 60%;
+            max-width: 600px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+        .back-to-main {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .back-to-main a {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: #333;
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 10px 15px;
+        }
+        .back-to-main a:hover {
+            background-color: #80deea;
+            color: #fff;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #80deea;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            text-align: center;
+            font-size: 18px;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -70,10 +115,34 @@
     </header>
     <div class="content">
         <img src="images/Zoya-kafedra.jpg" alt="Пастор Zoya Izokh">
-          <p>Добро пожаловать на мой официальный сайт! Здесь вы найдете информацию о моей деятельности, проектах и сможете связаться со мной.</p>
+        <p class="img-description">Пастор Zoya Izokh за кафедрой</p>
+        <div class="additional-images">
+            <img src="images/pastor-v-dele-2024-10-07.jpg" alt="Пастор в деле">
+            <img src="images/Zoya-shafar.jpg" alt="Пастор Zoya Izokh с шофаром">
+        </div>
     </div>
-        <img src="images/pastor-v-dele-2024-10-07.jpg" alt="Пастор в деле"> 
-        <img src="images/Zoya-shafar.jpg" alt="Пастор Zoya Izokh">  
-     
+
+    <div class="back-to-main">
+        <a href="index.html">Вернуться на главную</a>
+    </div>
+
+    <div id="back-to-top" class="back-to-top" onclick="scrollToTop()">↑ Наверх</div>
+
+    <script>
+        window.onscroll = function() {
+            var button = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+
 </body>
 </html>
+
